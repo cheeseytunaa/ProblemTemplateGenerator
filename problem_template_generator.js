@@ -138,7 +138,7 @@ function downloadFile() {
   const link = document.createElement("a");
 
   const file = new Blob(
-    [document.querySelector("#result").innerHTML], 
+    [document.querySelector("#result pre").innerText], 
     {type: "text/plain; charset=utf-8"}
   );
 
