@@ -136,6 +136,7 @@ checkSingleOrPluralCases();
 
 function downloadFile() {
   const link = document.createElement("a");
+  const filename = document.querySelector("#filename").value;
 
   const file = new Blob(
     [document.querySelector("#result pre").innerText], 
@@ -143,7 +144,7 @@ function downloadFile() {
   );
 
   link.href = URL.createObjectURL(file);
-  link.download = "export.md";
+  link.download = filename ? `${filename}.md` : "export.md";
 
   link.click();
   URL.revokeObjectURL(link.href);
